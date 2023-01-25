@@ -20,10 +20,18 @@ createRandomStrings(createRandomSequence(NUM_OF_STR)).then(
   async (arrStrings) => {
     const eol = '\n'
     const exitQuestion = 'Enter esc to exit: '
+    let count = 0
+    let times = []
     while ((await readLine(exitQuestion)) !== EXIT) {
-      const index = getRandomInt(NUM_OF_STR)
+      if (times.length === NUM_OF_STR) times = []
+      let index = getRandomInt(NUM_OF_STR)
+      while (times.includes(index)) {
+        index = getRandomInt(NUM_OF_STR)
+      }
+      times.push(index)
+      console.log('🚀 ~ file: index.js:32 ~ times', times)
       const strings = arrStrings[index].split('\t')
-      console.log('Ask: ' + strings[0] + eol)
+      console.log(`Ask ${index}: ` + strings[0] + eol)
       await readLine()
       console.log('Answer: ' + strings[1] + eol)
     }
