@@ -1,6 +1,6 @@
 const MAX = 10
 const NUM_OF_STR = 10
-const IN_ORDER = 0
+const IN_ORDER = 1
 const EXIT = 'esc'
 const { createRandomStrings, readLine } = require('./read-write-file')
 function getRandomInt(max) {
