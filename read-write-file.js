@@ -4,7 +4,7 @@ const readline = require('readline')
 async function createRandomStrings(arr) {
   try {
     const rl = readline.createInterface({
-      input: fs.createReadStream('test.txt'),
+      input: fs.createReadStream('daily.txt'),
       crlfDelay: Infinity,
     })
     let lineNum = 0
